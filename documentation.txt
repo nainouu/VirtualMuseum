@@ -1,10 +1,12 @@
 Documentation
 
-# changing scenes with doors:
-    - create a new scene
-    - add door.tscn
-    - set "target scene" variable to a scene from the editor inspector panel
-    - set a "spawnPoint" node3D (optional)
+# door and spawnpoint system:
+    - add a "Door.tscn" or "doubleDoor.tscn" or "caelumDoor.tscn" to your scene
+    - select the destination scene from the inspector panel
+    - open the destination scene and add a "spawnPoint.tscn" (spawnpoint.tscn's rotation will be applied to player when teleporting)
+    - go back to your original scene and press "Search For Spawnpoints" from the inspector panel
+    - select the spawnpoint you added
+    - Done
 
 # adding footstep sounds:
     - in "player.gd" add a new item to "footstepSounds" dictionary eg:   "name": preload("res://sounds/name.ogg")
@@ -12,8 +14,10 @@ Documentation
     - add new metadata to a surface:
         - name: "surfaceType" value: string
     - valuestring same as the name of the audio eg: "name"
+    - Done
 
 # artObject 2.0:
     - drag "artObject2.tscn" to the scene
     - select artwork from inpector panel
     - enable and customize frame (optional)
+    - Done
