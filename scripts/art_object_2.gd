@@ -47,11 +47,6 @@ extends Node3D
 			if EnableFrame:
 				generate_frame()
 				
-@export var FrameColor: Color = Color.WHITE:
-	set(value):
-		FrameColor = value
-		generate_frame()
-
 @export var FrameTextureEnable: bool = false:
 	set(value):
 		FrameTextureEnable = value
@@ -64,6 +59,10 @@ extends Node3D
 			if FrameTextureEnable:
 				generate_frame()
 
+@export var FrameColor: Color = Color.WHITE:
+	set(value):
+		FrameColor = value
+		generate_frame()
 
 @onready var Painting: Sprite3D = $Painting
 @onready var Model: Node3D = $Model

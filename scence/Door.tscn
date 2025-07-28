@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://bjeb4e71hxuwd"]
 
-[ext_resource type="Script" uid="uid://dv5hgjlu1ui0v" path="res://scripts/Door.gd" id="1_e2d88"]
+[ext_resource type="Script" uid="uid://dv5hgjlu1ui0v" path="res://scripts/door.gd" id="1_e2d88"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ofjbj"]
 size = Vector3(1, 2, 0.1)
@@ -52,6 +52,7 @@ _data = {
 
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_e2d88")
+selected_spawnpoint = ""
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0)

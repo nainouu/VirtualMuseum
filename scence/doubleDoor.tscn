@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://cmbm8q4vrhahu"]
 
-[ext_resource type="Script" uid="uid://bp686ylb17eiw" path="res://scripts/double_door.gd" id="1_gag2p"]
+[ext_resource type="Script" uid="uid://dv5hgjlu1ui0v" path="res://scripts/door.gd" id="1_gag2p"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_iaubx"]
 size = Vector3(1, 2, 0.05)
@@ -52,6 +52,7 @@ _data = {
 
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_gag2p")
+selected_spawnpoint = ""
 
 [node name="left" type="Node3D" parent="."]
 transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, -1, 0, 0)

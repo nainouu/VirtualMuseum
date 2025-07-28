@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://553g5odixojf"]
+[gd_scene load_steps=11 format=3 uid="uid://553g5odixojf"]
 
 [ext_resource type="PackedScene" uid="uid://ckte43s85gxa0" path="res://assets/3DModels/caelumInside.glb" id="1_vqp41"]
 [ext_resource type="Material" uid="uid://cyobsw41bo7h5" path="res://assets/textures/caelumPrimary.tres" id="2_v678a"]
@@ -6,6 +6,7 @@
 [ext_resource type="Material" uid="uid://b1t312eo3qn76" path="res://assets/textures/caelumGrey.tres" id="4_ywicc"]
 [ext_resource type="PackedScene" uid="uid://05qw73vkswb4" path="res://scence/caelumDoor.tscn" id="6_e5sie"]
 [ext_resource type="Texture2D" uid="uid://2evyx6u5an12" path="res://cubemap/panorama_image.png" id="6_ywicc"]
+[ext_resource type="PackedScene" uid="uid://t0xxkorfqse6" path="res://scence/spawnPoint.tscn" id="7_e5sie"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_e5sie"]
 panorama = ExtResource("6_ywicc")
@@ -32,12 +33,13 @@ surface_material_override/0 = ExtResource("2_v678a")
 [node name="caelumInsideDoor" parent="." index="4"]
 surface_material_override/0 = ExtResource("4_ywicc")
 
-[node name="spawnPoint" type="Node3D" parent="." index="5"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.17096, -2.85009)
-
-[node name="cubemapTest" type="WorldEnvironment" parent="." index="6"]
+[node name="cubemapTest" type="WorldEnvironment" parent="." index="5"]
 environment = SubResource("Environment_ngt8q")
 
-[node name="Doors" parent="." index="7" instance=ExtResource("6_e5sie")]
+[node name="Doors" parent="." index="6" instance=ExtResource("6_e5sie")]
 transform = Transform3D(-0.861929, 0, 8.74228e-08, 0, 1.23003, 0, -7.53522e-08, 0, -1, 0.0181731, 1.14934, -4.8599)
 targetScenePath = "uid://cm43gro6ra13j"
+selected_spawnpoint = "caelumDoorOutside"
+
+[node name="caelumDoorInside" parent="." index="7" instance=ExtResource("7_e5sie")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -0.148154, 0.544617, -3.8407)

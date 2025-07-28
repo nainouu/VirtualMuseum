@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://t0xxkorfqse6"]
+
+[ext_resource type="Script" uid="uid://xvpay6tx807e" path="res://scripts/spawnPoint.gd" id="1_1c5dv"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_dplb4"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1c5dv"]
+transparency = 1
+albedo_color = Color(0.447, 0.503, 1, 0.685)
+rim_enabled = true
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_1c5dv")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_dplb4")
+surface_material_override/0 = SubResource("StandardMaterial3D_1c5dv")
+
+[node name="SpawnpointName" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.91, 0)
+billboard = 1
+text = "Node3D"
+font_size = 62
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+target_position = Vector3(0, 0, 2.86)
+debug_shape_thickness = 5

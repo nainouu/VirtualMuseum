@@ -67,7 +67,7 @@ func _on_play_button_pressed():
 	# if world hasn't been loaded yet
 	if world_node.worldLoaded == false:
 		world_node.loadPlayer()
-		world_node.loadLevel(world_node.defaultScene)
+		world_node.loadLevel(world_node.defaultScene, null)
 		if playButton: playButton.text = "Continue"
 
 	else:

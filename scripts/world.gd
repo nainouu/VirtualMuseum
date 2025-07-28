@@ -20,8 +20,8 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+#func _process(delta: float) -> void:
+	#pass
 	
 func _input(event):
 	if event.is_action_pressed("ui_cancel"):
@@ -48,27 +48,27 @@ func loadPlayer():
 	var playerScene = load("res://scence/player.tscn").instantiate()
 	add_child(playerScene)
 	player = playerScene
-	
 
-func loadLevel(packedScene: PackedScene):
+func loadLevel(packedScene: PackedScene, spawnpoint: Node3D):
 	# Clear previous scene
 	stage.get_children().map(func(child): child.queue_free())
 
 	# init new scene
 	var levelInstance = packedScene.instantiate()
 	stage.add_child(levelInstance)
-	
-	# find spawnPoint (node3D)
-	var spawnPointNode = levelInstance.get_node_or_null("spawnPoint")
-	var spawnPointPos = Vector3.ZERO
-	
-	if spawnPointNode == null:
-		push_error("'spawnPoint' node not found")
-	else:
-		spawnPointPos = spawnPointNode.global_position
 
-	# set player position
-	assert(player, "player null for some reason")
-	player.global_position = spawnPointPos
+	#assert(player, "player null for some reason")
+	
+	# teleport player to spawnpoint
+	if spawnpoint:
+		player.position = spawnpoint.position
+		#player.transform = spawnpoint.transform # copy spawnpoints rotation
+		#player.global_transform = spawnpoint.global_transform
+		player.rotation = spawnpoint.rotation
+		
+	else:
+		# spawnpoint not found, defaulting to (0,0)
+		print("Spawnpoint is null, or 'loadLevel' was called with null spawnpoint. Spawning player to 0.0")
+		player.global_position = Vector3.ZERO
 	
 	worldLoaded = true

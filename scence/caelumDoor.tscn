@@ -49,24 +49,34 @@ tracks/3/keys = {
 "values": [1.0]
 }
 
-[sub_resource type="Animation" id="Animation_iaubx"]
-resource_name = "door_open"
-length = 0.4
+[sub_resource type="Animation" id="Animation_wtqia"]
+resource_name = "caelumDoorClose"
+length = 0.2
 step = 0.0
-tracks/0/type = "rotation_3d"
+tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("left")
-tracks/0/interp = 2
+tracks/0/path = NodePath("left:scale:x")
+tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 0, 1, 0, -4.37114e-08, 0.4, 1, 0, 0.991445, 0, -0.130526)
-tracks/1/type = "rotation_3d"
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.1, 1.0]
+}
+tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("right")
-tracks/1/interp = 2
+tracks/1/path = NodePath("right:scale:x")
+tracks/1/interp = 1
 tracks/1/loop_wrap = true
-tracks/1/keys = PackedFloat32Array(0, 1, 0, 1, 0, 4.37114e-08, 0.4, 1, 0, 0.991445, 0, 0.130526)
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.1, 1.0]
+}
 
 [sub_resource type="Animation" id="Animation_k1fbu"]
 resource_name = "caelumDoorOpen"
@@ -97,34 +107,24 @@ tracks/1/keys = {
 "values": [1.0, 0.1]
 }
 
-[sub_resource type="Animation" id="Animation_wtqia"]
-resource_name = "caelumDoorClose"
-length = 0.2
+[sub_resource type="Animation" id="Animation_iaubx"]
+resource_name = "door_open"
+length = 0.4
 step = 0.0
-tracks/0/type = "value"
+tracks/0/type = "rotation_3d"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("left:scale:x")
-tracks/0/interp = 1
+tracks/0/path = NodePath("left")
+tracks/0/interp = 2
 tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.1, 1.0]
-}
-tracks/1/type = "value"
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 1, 0, -4.37114e-08, 0.4, 1, 0, 0.991445, 0, -0.130526)
+tracks/1/type = "rotation_3d"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("right:scale:x")
-tracks/1/interp = 1
+tracks/1/path = NodePath("right")
+tracks/1/interp = 2
 tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.1, 1.0]
-}
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 1, 0, 4.37114e-08, 0.4, 1, 0, 0.991445, 0, 0.130526)
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_73bkp"]
 _data = {

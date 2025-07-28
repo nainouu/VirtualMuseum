@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://rfksfh242ud6"]
+[gd_scene load_steps=14 format=3 uid="uid://rfksfh242ud6"]
 
 [ext_resource type="PackedScene" uid="uid://dvpu183hl1gjr" path="res://assets/3DModels/greekTempleInside.glb" id="1_wc3es"]
 [ext_resource type="PackedScene" uid="uid://cmbm8q4vrhahu" path="res://scence/doubleDoor.tscn" id="2_cwiuu"]
@@ -9,6 +9,7 @@
 [ext_resource type="Material" path="res://assets/textures/templePillar.tres" id="5_lwmcw"]
 [ext_resource type="Material" uid="uid://c02xwog2bsggi" path="res://assets/textures/firTrunk.tres" id="7_hp5xt"]
 [ext_resource type="Material" uid="uid://r0wt55scjmb8" path="res://assets/textures/templeRed.tres" id="7_j3ugf"]
+[ext_resource type="PackedScene" uid="uid://t0xxkorfqse6" path="res://scence/spawnPoint.tscn" id="10_c2m0y"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_qcvip"]
 panorama = ExtResource("3_2vels")
@@ -24,19 +25,15 @@ glow_enabled = true
 
 [node name="greekTempleInside" instance=ExtResource("1_wc3es")]
 
-[node name="ART" type="Node3D" parent="." index="0"]
-
-[node name="templeInsideMesh" parent="." index="1"]
+[node name="templeInsideMesh" parent="." index="0"]
 surface_material_override/0 = ExtResource("2_na2pg")
 
-[node name="spawnPoint" type="Node3D" parent="." index="2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, -17.4801)
-
-[node name="Door" parent="." index="3" instance=ExtResource("2_cwiuu")]
+[node name="Door" parent="." index="1" instance=ExtResource("2_cwiuu")]
 transform = Transform3D(1.34782, 0, 0, 0, 1.67928, 0, 0, 0, 1, 0, 1.6445, -27.1297)
 targetScenePath = "uid://cm43gro6ra13j"
+selected_spawnpoint = "templeDoor"
 
-[node name="env" type="Node3D" parent="." index="4"]
+[node name="env" type="Node3D" parent="." index="2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0464887, 0, 0)
 visible = false
 
@@ -48,40 +45,43 @@ shadow_enabled = true
 [node name="WorldEnvironment" type="WorldEnvironment" parent="env" index="1"]
 environment = SubResource("Environment_pq8xk")
 
-[node name="pillarInside" parent="." index="5"]
+[node name="pillarInside" parent="." index="3"]
 surface_material_override/0 = ExtResource("5_lwmcw")
 
-[node name="architraveLong2In" parent="." index="6"]
+[node name="architraveLong2In" parent="." index="4"]
 surface_material_override/0 = ExtResource("2_pq8xk")
 
-[node name="architraveLongIn" parent="." index="7"]
+[node name="architraveLongIn" parent="." index="5"]
 surface_material_override/0 = ExtResource("2_pq8xk")
 
-[node name="doorFrameInside" parent="." index="8"]
+[node name="doorFrameInside" parent="." index="6"]
 surface_material_override/0 = ExtResource("5_lwmcw")
 
-[node name="templeFloorInside" parent="." index="9"]
+[node name="templeFloorInside" parent="." index="7"]
 surface_material_override/0 = ExtResource("7_j3ugf")
 
-[node name="pillarInsideUpper" parent="." index="10"]
+[node name="pillarInsideUpper" parent="." index="8"]
 surface_material_override/0 = ExtResource("5_lwmcw")
 
-[node name="architraveLongTop" parent="." index="11"]
+[node name="architraveLongTop" parent="." index="9"]
 surface_material_override/0 = ExtResource("2_pq8xk")
 
-[node name="architraveLongTop2" parent="." index="12"]
+[node name="architraveLongTop2" parent="." index="10"]
 surface_material_override/0 = ExtResource("2_pq8xk")
 
-[node name="Truss" parent="." index="13"]
+[node name="Truss" parent="." index="11"]
 surface_material_override/0 = ExtResource("7_hp5xt")
 
-[node name="templeFloorInside1" parent="." index="14"]
+[node name="templeFloorInside1" parent="." index="12"]
 surface_material_override/0 = ExtResource("7_j3ugf")
 
-[node name="Node3D" parent="." index="75" instance=ExtResource("2_j3ugf")]
+[node name="Node3D" parent="." index="73" instance=ExtResource("2_j3ugf")]
 transform = Transform3D(-1.75664e-08, 0, -0.401872, 0, 0.401872, 0, 0.401872, 0, -1.75664e-08, 6.36931, 3.47652, -16.54)
 Artwork = "uid://dvm4hu4ldqdx1"
 EnableFrame = true
 FrameDepth = 0.42
 FrameWidth = 1.39
 FrameColor = Color(0.0723144, 0.065643, 0.065643, 1)
+
+[node name="templeSpawnpoint" parent="." index="74" instance=ExtResource("10_c2m0y")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.223808, 0.5, -25.0428)
