@@ -69,6 +69,10 @@ func _ready() -> void:
 	jetpackInfoLabel.visible = false
 	gunmodel.visible = false
 	
+	#lookRotation.x -= event.relative.x * MOUSE_SENS
+	#lookRotation.y -= event.relative.y * MOUSE_SENS
+	#lookRotation.y = clamp(lookRotation.y, -1.5, 1.5)  # Prevent flipping
+	
 	
 	
 
@@ -85,12 +89,10 @@ func _ready() -> void:
 
 func _input(event):
 	if event is InputEventMouseMotion and cameraRotation:
-		lookRotation.x -= event.relative.x * MOUSE_SENS
-		lookRotation.y -= event.relative.y * MOUSE_SENS
-		lookRotation.y = clamp(lookRotation.y, -1.5, 1.5)  # Prevent flipping
+		rotate_y(-event.relative.x * MOUSE_SENS)
+		camera_3d.rotate_x(-event.relative.y * MOUSE_SENS)
+		camera_3d.rotation.x = clampf(camera_3d.rotation.x, -deg_to_rad(70), deg_to_rad(70))
 
-		rotation.y = lookRotation.x
-		head.rotation.x = lookRotation.y
 
 	#if event.is_action_pressed("ui_cancel"):
 		#get_tree().quit()

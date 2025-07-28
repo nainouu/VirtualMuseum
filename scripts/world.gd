@@ -62,8 +62,6 @@ func loadLevel(packedScene: PackedScene, spawnpoint: Node3D):
 	# teleport player to spawnpoint
 	if spawnpoint:
 		player.position = spawnpoint.position
-		#player.transform = spawnpoint.transform # copy spawnpoints rotation
-		#player.global_transform = spawnpoint.global_transform
 		player.rotation = spawnpoint.rotation
 		
 	else:

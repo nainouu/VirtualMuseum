@@ -17,10 +17,9 @@ sky_material = SubResource("PanoramaSkyMaterial_e5sie")
 [sub_resource type="Environment" id="Environment_ngt8q"]
 background_mode = 2
 sky = SubResource("Sky_path0")
-sky_rotation = Vector3(0, -2.11883, 0)
+sky_rotation = Vector3(0, 0.790634, 0)
 
 [node name="caelumInside" instance=ExtResource("1_vqp41")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
 
 [node name="caelumInside" parent="." index="2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0166197, -16.2031, -0.0447614)
