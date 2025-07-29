@@ -1,0 +1,243 @@
+[gd_scene load_steps=8 format=3 uid="uid://d0qo0r25a8whw"]
+
+[ext_resource type="PackedScene" uid="uid://bw03htbmeuprv" path="res://assets/3DModels/Maruoka.glb" id="1_q61ml"]
+[ext_resource type="Material" uid="uid://b1t312eo3qn76" path="res://assets/textures/caelumGrey.tres" id="2_47rj6"]
+[ext_resource type="Material" uid="uid://cgutedlacmn3y" path="res://assets/textures/MaruokaWood.tres" id="3_uhfo6"]
+[ext_resource type="Material" uid="uid://crek4amp28ghp" path="res://assets/textures/templeFloor.tres" id="4_uiu2j"]
+[ext_resource type="Material" uid="uid://doe7jfplfffg8" path="res://assets/textures/MaruokaRoof.tres" id="5_r628i"]
+[ext_resource type="Material" uid="uid://bc3l0l87va6eh" path="res://assets/textures/MaruokaDarkWood.tres" id="6_s2lah"]
+[ext_resource type="Material" uid="uid://dg73dgkr3ivr2" path="res://assets/textures/void.tres" id="7_x07cb"]
+
+[node name="Maruoka" instance=ExtResource("1_q61ml")]
+
+[node name="base" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_47rj6")
+
+[node name="upperRamp" parent="." index="1"]
+surface_material_override/0 = ExtResource("2_47rj6")
+
+[node name="upperRampRailing" parent="upperRamp" index="0"]
+surface_material_override/0 = ExtResource("3_uhfo6")
+
+[node name="upperStairs" parent="upperRamp" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.42711, 2.16843, -0.0199556)
+surface_material_override/1 = ExtResource("4_uiu2j")
+
+[node name="lowerRamp" parent="." index="2"]
+surface_material_override/0 = ExtResource("2_47rj6")
+
+[node name="cornerPost" parent="lowerRamp" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.940059, 1.77716, 0.479828)
+surface_material_override/0 = ExtResource("3_uhfo6")
+
+[node name="cornerPost2" parent="lowerRamp" index="1"]
+surface_material_override/0 = ExtResource("3_uhfo6")
+
+[node name="lowerRampRailing" parent="lowerRamp" index="2"]
+surface_material_override/0 = ExtResource("3_uhfo6")
+
+[node name="lowerStairs" parent="lowerRamp" index="3"]
+surface_material_override/0 = ExtResource("4_uiu2j")
+surface_material_override/1 = ExtResource("4_uiu2j")
+
+[node name="firstFloor" parent="." index="3"]
+surface_material_override/0 = ExtResource("3_uhfo6")
+surface_material_override/1 = ExtResource("4_uiu2j")
+
+[node name="baseRoof" parent="firstFloor" index="0"]
+surface_material_override/0 = ExtResource("5_r628i")
+
+[node name="doorFrame" parent="firstFloor" index="1"]
+surface_material_override/0 = ExtResource("6_s2lah")
+
+[node name="shootBox" parent="firstFloor" index="2"]
+surface_material_override/0 = ExtResource("7_x07cb")
+surface_material_override/1 = ExtResource("6_s2lah")
+
+[node name="shootBoxRoof" parent="firstFloor/shootBox" index="0"]
+surface_material_override/0 = ExtResource("5_r628i")
+
+[node name="shootBox2" parent="firstFloor" index="3"]
+surface_material_override/0 = ExtResource("7_x07cb")
+surface_material_override/1 = ExtResource("6_s2lah")
+
+[node name="shootBoxRoof2" parent="firstFloor/shootBox2" index="0"]
+surface_material_override/0 = ExtResource("5_r628i")
+
+[node name="shootBox3" parent="firstFloor" index="4"]
+surface_material_override/0 = ExtResource("7_x07cb")
+surface_material_override/1 = ExtResource("6_s2lah")
+
+[node name="shootBoxRoof3" parent="firstFloor/shootBox3" index="0"]
+surface_material_override/0 = ExtResource("5_r628i")
+
+[node name="window_001" parent="firstFloor" index="5"]
+surface_material_override/0 = ExtResource("6_s2lah")
+surface_material_override/1 = ExtResource("4_uiu2j")
+
+[node name="window_002" parent="firstFloor" index="6"]
+surface_material_override/0 = ExtResource("6_s2lah")
+surface_material_override/1 = ExtResource("4_uiu2j")
+
+[node name="window_003" parent="firstFloor" index="7"]
+surface_material_override/0 = ExtResource("6_s2lah")
+surface_material_override/1 = ExtResource("4_uiu2j")
+
+[node name="window_004" parent="firstFloor" index="8"]
+surface_material_override/0 = ExtResource("6_s2lah")
+surface_material_override/1 = ExtResource("4_uiu2j")
+
+[node name="window_005" parent="firstFloor" index="9"]
+surface_material_override/0 = ExtResource("6_s2lah")
+surface_material_override/1 = ExtResource("4_uiu2j")
+
+[node name="window_006" parent="firstFloor" index="10"]
+surface_material_override/0 = ExtResource("6_s2lah")
+surface_material_override/1 = ExtResource("4_uiu2j")
+
+[node name="window_007" parent="firstFloor" index="11"]
+surface_material_override/0 = ExtResource("6_s2lah")
+surface_material_override/1 = ExtResource("4_uiu2j")
+
+[node name="windowOpen" parent="firstFloor" index="12"]
+surface_material_override/0 = ExtResource("6_s2lah")
+surface_material_override/1 = ExtResource("7_x07cb")
+
+[node name="windowLid" parent="firstFloor/windowOpen" index="0"]
+surface_material_override/0 = ExtResource("6_s2lah")
+surface_material_override/1 = ExtResource("4_uiu2j")
+
+[node name="secondFloor" parent="." index="4"]
+surface_material_override/0 = ExtResource("3_uhfo6")
+surface_material_override/1 = ExtResource("4_uiu2j")
+
+[node name="doorFrameTop" parent="secondFloor" index="0"]
+surface_material_override/0 = ExtResource("6_s2lah")
+
+[node name="thirdFloorBalcony" parent="secondFloor" index="1"]
+surface_material_override/0 = ExtResource("6_s2lah")
+
+[node name="balconyRailing" parent="secondFloor/thirdFloorBalcony" index="0"]
+surface_material_override/0 = ExtResource("6_s2lah")
+
+[node name="railingPost" parent="secondFloor/thirdFloorBalcony" index="1"]
+surface_material_override/0 = ExtResource("6_s2lah")
+
+[node name="railingPost1" parent="secondFloor/thirdFloorBalcony" index="2"]
+surface_material_override/0 = ExtResource("6_s2lah")
+
+[node name="railingPost2" parent="secondFloor/thirdFloorBalcony" index="3"]
+surface_material_override/0 = ExtResource("6_s2lah")
+
+[node name="railingPost3" parent="secondFloor/thirdFloorBalcony" index="4"]
+surface_material_override/0 = ExtResource("6_s2lah")
+
+[node name="windowTop" parent="secondFloor" index="2"]
+surface_material_override/0 = ExtResource("6_s2lah")
+surface_material_override/1 = ExtResource("4_uiu2j")
+
+[node name="windowTop1" parent="secondFloor" index="3"]
+surface_material_override/0 = ExtResource("6_s2lah")
+surface_material_override/1 = ExtResource("4_uiu2j")
+
+[node name="windowTop2" parent="secondFloor" index="4"]
+surface_material_override/0 = ExtResource("6_s2lah")
+surface_material_override/1 = ExtResource("4_uiu2j")
+
+[node name="roof" parent="." index="5"]
+surface_material_override/0 = ExtResource("5_r628i")
+
+[node name="backRoof" parent="roof" index="0"]
+surface_material_override/0 = ExtResource("5_r628i")
+
+[node name="frontRoof" parent="roof" index="1"]
+surface_material_override/0 = ExtResource("5_r628i")
+
+[node name="roofTopper_001" parent="roof" index="2"]
+surface_material_override/0 = ExtResource("5_r628i")
+
+[node name="roofTopper_002" parent="roof" index="3"]
+surface_material_override/0 = ExtResource("5_r628i")
+
+[node name="roofTrim" parent="roof" index="4"]
+surface_material_override/0 = ExtResource("5_r628i")
+
+[node name="roofTrim_001" parent="roof" index="5"]
+surface_material_override/0 = ExtResource("5_r628i")
+
+[node name="roofTrim_002" parent="roof" index="6"]
+surface_material_override/0 = ExtResource("5_r628i")
+
+[node name="roofTrim_003" parent="roof" index="7"]
+surface_material_override/0 = ExtResource("5_r628i")
+
+[node name="secondFloorExtention" parent="roof" index="8"]
+material_override = ExtResource("3_uhfo6")
+surface_material_override/0 = ExtResource("3_uhfo6")
+
+[node name="secondFloorExtentionSides" parent="roof" index="9"]
+material_override = ExtResource("3_uhfo6")
+surface_material_override/0 = ExtResource("3_uhfo6")
+
+[node name="secondFloorSidesRoof" parent="roof" index="10"]
+surface_material_override/0 = ExtResource("5_r628i")
+
+[node name="windowUpper" parent="roof" index="11"]
+surface_material_override/0 = ExtResource("6_s2lah")
+surface_material_override/1 = ExtResource("4_uiu2j")
+
+[node name="windowUpper2" parent="roof" index="12"]
+surface_material_override/0 = ExtResource("6_s2lah")
+surface_material_override/1 = ExtResource("4_uiu2j")
+
+[node name="windowUpperOpen" parent="roof" index="13"]
+surface_material_override/0 = ExtResource("6_s2lah")
+surface_material_override/1 = ExtResource("7_x07cb")
+
+[node name="window_010" parent="roof/windowUpperOpen" index="0"]
+surface_material_override/0 = ExtResource("6_s2lah")
+surface_material_override/1 = ExtResource("4_uiu2j")
+
+[node name="windowUpperOpen2" parent="roof" index="14"]
+surface_material_override/0 = ExtResource("6_s2lah")
+surface_material_override/1 = ExtResource("7_x07cb")
+
+[node name="window_012" parent="roof/windowUpperOpen2" index="0"]
+surface_material_override/0 = ExtResource("6_s2lah")
+surface_material_override/1 = ExtResource("4_uiu2j")
+
+[node name="topRoof" parent="." index="6"]
+surface_material_override/0 = ExtResource("5_r628i")
+
+[node name="backRoofTop" parent="topRoof" index="0"]
+surface_material_override/0 = ExtResource("5_r628i")
+
+[node name="frontRoofTop" parent="topRoof" index="1"]
+surface_material_override/0 = ExtResource("5_r628i")
+
+[node name="roofTopBlock" parent="topRoof" index="2"]
+surface_material_override/0 = ExtResource("4_uiu2j")
+
+[node name="roofTopper" parent="topRoof" index="3"]
+surface_material_override/0 = ExtResource("5_r628i")
+
+[node name="roofTopper_003" parent="topRoof" index="4"]
+surface_material_override/0 = ExtResource("5_r628i")
+
+[node name="roofTopper_004" parent="topRoof" index="5"]
+surface_material_override/0 = ExtResource("5_r628i")
+
+[node name="roofTrimUpper" parent="topRoof" index="6"]
+surface_material_override/0 = ExtResource("5_r628i")
+
+[node name="roofTrimUpper_001" parent="topRoof" index="7"]
+surface_material_override/0 = ExtResource("5_r628i")
+
+[node name="roofTrimUpper_002" parent="topRoof" index="8"]
+surface_material_override/0 = ExtResource("5_r628i")
+
+[node name="roofTrimUpper_003" parent="topRoof" index="9"]
+surface_material_override/0 = ExtResource("5_r628i")
+
+[node name="CollisionShape3D" parent="windowCol_003" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.00527954)
