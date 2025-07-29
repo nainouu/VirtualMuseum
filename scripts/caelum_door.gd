@@ -54,7 +54,7 @@ func searchForSpawnpoints():
 
 	if !FileAccess.file_exists(targetScenePath):
 		push_error("scene file dont exist: %s" % targetScenePath)
-		return
+		#return
 
 	var packed_scene := load(targetScenePath)
 	if !packed_scene:
@@ -65,7 +65,7 @@ func searchForSpawnpoints():
 
 	if !FileAccess.file_exists(spawnpoint_scene_path):
 		push_error("spawnPoint.tscn not found.")
-		return
+		#return
 
 	for child in scene_instance.get_children():
 		if child.scene_file_path == spawnpoint_scene_path:
@@ -113,7 +113,7 @@ func toggle_door():
 			
 		if !FileAccess.file_exists(targetScenePath):
 			push_warning("Target scene dont exist")
-			return
+			#return
 
 		var packedScene = load(targetScenePath)
 		if !packedScene or !packedScene is PackedScene:
