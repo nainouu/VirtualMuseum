@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://cm43gro6ra13j"]
+[gd_scene load_steps=33 format=3 uid="uid://cm43gro6ra13j"]
 
 [ext_resource type="Shader" uid="uid://c8p8i8i67wlc5" path="res://scence/world.gdshader" id="1_thelq"]
 [ext_resource type="Texture2D" uid="uid://cyw35lu830o74" path="res://assets/textures/dev/grids/Green/texture_09.png" id="3_7giy0"]
@@ -9,11 +9,12 @@
 [ext_resource type="PackedScene" uid="uid://ba0nxk8sfhju1" path="res://scence/jetpack.tscn" id="8_rdoft"]
 [ext_resource type="PackedScene" uid="uid://5e0fpuqewwdt" path="res://scence/caelum.tscn" id="8_shjb2"]
 [ext_resource type="PackedScene" uid="uid://t0xxkorfqse6" path="res://scence/spawnPoint.tscn" id="10_shjb2"]
-[ext_resource type="Texture2D" uid="uid://04r0ig13lg5" path="res://assets/textures/Grass002_1K-JPG/Grass002_1K-JPG_Color.jpg" id="10_spu2r"]
-[ext_resource type="Texture2D" uid="uid://boxpa353ysv4j" path="res://assets/textures/Grass002_1K-JPG/Grass002_1K-JPG_NormalDX.jpg" id="11_ws35w"]
-[ext_resource type="Texture2D" uid="uid://duxce60f2ltnp" path="res://assets/textures/Ground085_1K-JPG/Ground085_1K-JPG_Color.jpg" id="12_7n32q"]
-[ext_resource type="Texture2D" uid="uid://b7dem31ohj40c" path="res://assets/textures/Ground085_1K-JPG/Ground085_1K-JPG_NormalDX.jpg" id="13_jovpq"]
+[ext_resource type="Texture2D" uid="uid://bxcyu6mwq0ouy" path="res://assets/textures/Grass002_1K-JPG/Grass002_1K-JPG_Color.jpg" id="10_spu2r"]
+[ext_resource type="Texture2D" uid="uid://1y4numian4cu" path="res://assets/textures/Grass002_1K-JPG/Grass002_1K-JPG_NormalDX.jpg" id="11_ws35w"]
+[ext_resource type="Texture2D" uid="uid://bpwd43kp812gq" path="res://assets/textures/Ground085_1K-JPG/Ground085_1K-JPG_Color.jpg" id="12_7n32q"]
+[ext_resource type="Texture2D" uid="uid://b8m3tc72xc4np" path="res://assets/textures/Ground085_1K-JPG/Ground085_1K-JPG_NormalDX.jpg" id="13_jovpq"]
 [ext_resource type="Texture2D" uid="uid://br3d3ghmmwhpv" path="res://assets/hdris/kloofendal_48d_partly_cloudy_puresky_2k.hdr" id="14_7n32q"]
+[ext_resource type="PackedScene" uid="uid://d0qo0r25a8whw" path="res://scence/Maruoka.tscn" id="15_jovpq"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_q0xho"]
 render_priority = 0
@@ -212,3 +213,6 @@ metadata/_edit_lock_ = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_ws35w")
+
+[node name="Maruoka" parent="." instance=ExtResource("15_jovpq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.3538, -0.052922, 38.004)
