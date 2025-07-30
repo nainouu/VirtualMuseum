@@ -1,7 +1,8 @@
-[gd_scene load_steps=33 format=3 uid="uid://cm43gro6ra13j"]
+[gd_scene load_steps=34 format=3 uid="uid://cm43gro6ra13j"]
 
 [ext_resource type="Shader" uid="uid://c8p8i8i67wlc5" path="res://scence/world.gdshader" id="1_thelq"]
 [ext_resource type="Texture2D" uid="uid://cyw35lu830o74" path="res://assets/textures/dev/grids/Green/texture_09.png" id="3_7giy0"]
+[ext_resource type="Script" uid="uid://dub0v45xrpyad" path="res://scripts/mazeSpawner.gd" id="4_ma4xr"]
 [ext_resource type="Texture2D" uid="uid://dlyx1hndocury" path="res://assets/textures/dev/grids/Dark/texture_02.png" id="4_shjb2"]
 [ext_resource type="PackedScene" uid="uid://bdpmd8n1tb7nt" path="res://scence/greekTemple.tscn" id="5_spu2r"]
 [ext_resource type="PackedScene" uid="uid://cmbm8q4vrhahu" path="res://scence/doubleDoor.tscn" id="6_j567o"]
@@ -179,6 +180,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.4201, 9.53674e-07, -4.993
 use_collision = true
 size = Vector3(5, 0.1, 5)
 material = SubResource("StandardMaterial3D_lhauw")
+script = ExtResource("4_ma4xr")
 metadata/surfaceType = "dirt"
 
 [node name="greekTemple" parent="." instance=ExtResource("5_spu2r")]
@@ -216,3 +218,7 @@ environment = SubResource("Environment_ws35w")
 
 [node name="Maruoka" parent="." instance=ExtResource("15_jovpq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.3538, -0.052922, 38.004)
+
+[node name="MazeSpawner" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.184, 0, 78.127)
+script = ExtResource("4_ma4xr")
