@@ -24,7 +24,7 @@ func shoot():
 	if impactRay.is_colliding() and decalCount < maxDecals:
 		decalCount += 1
 		var collision = impactRay.get_collision_point()
-		LineDrawer.DrawLine(gunModel.global_position, collision, Color(0.941176, 1, 0.941176, 1), 0.1)
+		
 		$gunPlayer.play()
 		#spawnDecal(collision, collision.normalized())
 		spawnDecal2(impactRay)
@@ -51,11 +51,6 @@ func spawnDecal(pos: Vector3, normal: Vector3):
 func spawnDecal2(raycast: RayCast3D):
 	var splat = b_decal.instantiate()
 	if raycast:
-		raycast.get_collider().add_child(splat)
-		splat.global_transform.origin = raycast.get_collision_point()
-		splat.look_at(raycast.get_collision_point() + raycast.get_collision_normal(), Vector3.UP)
-		splat.rotate_object_local(Vector3(0, 0, 1), randf() * TAU)
-		
 		var min = 0.3
 		var max = 1.0
 		
@@ -63,5 +58,12 @@ func spawnDecal2(raycast: RayCast3D):
 		var r = randf_range(min, max)
 		var g = randf_range(min, max)
 		var b = randf_range(min, max)
+		LineDrawer.DrawLine(gunModel.global_position, raycast.get_collision_point(), Color(r, g, b), 0.1)
+		raycast.get_collider().add_child(splat)
+		splat.global_transform.origin = raycast.get_collision_point()
+		splat.look_at(raycast.get_collision_point() + raycast.get_collision_normal(), Vector3.UP)
+		splat.rotate_object_local(Vector3(0, 0, 1), randf() * TAU)
+		
+
 		splat.get_child(0).modulate = Color(r, g, b)
 	
