@@ -217,7 +217,7 @@ metadata/_edit_lock_ = true
 environment = SubResource("Environment_ws35w")
 
 [node name="Maruoka" parent="." instance=ExtResource("15_jovpq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.3538, -0.052922, 38.004)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -160.278, 19.8483, 83.0883)
 
 [node name="MazeSpawner" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.184, 0, 78.127)

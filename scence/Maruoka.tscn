@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://d0qo0r25a8whw"]
 
-[ext_resource type="PackedScene" uid="uid://bw03htbmeuprv" path="res://assets/3DModels/Maruoka.glb" id="1_q61ml"]
+[ext_resource type="PackedScene" uid="uid://md1gfdvlqqfo" path="res://assets/3DModels/Maruoka.glb" id="1_q61ml"]
 [ext_resource type="Material" uid="uid://b1t312eo3qn76" path="res://assets/textures/caelumGrey.tres" id="2_47rj6"]
 [ext_resource type="Material" uid="uid://cgutedlacmn3y" path="res://assets/textures/MaruokaWood.tres" id="3_uhfo6"]
 [ext_resource type="Material" uid="uid://crek4amp28ghp" path="res://assets/textures/templeFloor.tres" id="4_uiu2j"]
