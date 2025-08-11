@@ -1,15 +1,17 @@
-[gd_scene load_steps=14 format=3 uid="uid://rfksfh242ud6"]
+[gd_scene load_steps=16 format=3 uid="uid://rfksfh242ud6"]
 
 [ext_resource type="PackedScene" uid="uid://dvpu183hl1gjr" path="res://assets/3DModels/greekTempleInside.glb" id="1_wc3es"]
 [ext_resource type="PackedScene" uid="uid://cmbm8q4vrhahu" path="res://scence/doubleDoor.tscn" id="2_cwiuu"]
 [ext_resource type="PackedScene" uid="uid://hkdvrflbadlj" path="res://scence/artObject2.tscn" id="2_j3ugf"]
 [ext_resource type="Material" uid="uid://v7p1lb3phfdk" path="res://assets/textures/templeWall.tres" id="2_na2pg"]
-[ext_resource type="Material" path="res://assets/textures/templeFloor.tres" id="2_pq8xk"]
+[ext_resource type="Material" uid="uid://crek4amp28ghp" path="res://assets/textures/templeFloor.tres" id="2_pq8xk"]
 [ext_resource type="Texture2D" uid="uid://br3d3ghmmwhpv" path="res://assets/hdris/kloofendal_48d_partly_cloudy_puresky_2k.hdr" id="3_2vels"]
-[ext_resource type="Material" path="res://assets/textures/templePillar.tres" id="5_lwmcw"]
+[ext_resource type="Material" uid="uid://b2rbixy7q5m7g" path="res://assets/textures/templePillar.tres" id="5_lwmcw"]
 [ext_resource type="Material" uid="uid://c02xwog2bsggi" path="res://assets/textures/firTrunk.tres" id="7_hp5xt"]
 [ext_resource type="Material" uid="uid://r0wt55scjmb8" path="res://assets/textures/templeRed.tres" id="7_j3ugf"]
 [ext_resource type="PackedScene" uid="uid://t0xxkorfqse6" path="res://scence/spawnPoint.tscn" id="10_c2m0y"]
+[ext_resource type="PackedScene" uid="uid://l8cmkrbwhs6j" path="res://scence/greekArchitrave.tscn" id="11_4bevt"]
+[ext_resource type="PackedScene" uid="uid://clb1uhprku5g8" path="res://scence/greekTruss.tscn" id="12_088kc"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_qcvip"]
 panorama = ExtResource("3_2vels")
@@ -75,6 +77,12 @@ surface_material_override/0 = ExtResource("7_hp5xt")
 [node name="templeFloorInside1" parent="." index="12"]
 surface_material_override/0 = ExtResource("7_j3ugf")
 
+[node name="doorFrameInsideMiddle" parent="." index="13"]
+surface_material_override/0 = ExtResource("5_lwmcw")
+
+[node name="templeInsideSecondMesh" parent="." index="14"]
+surface_material_override/0 = ExtResource("2_na2pg")
+
 [node name="Node3D" parent="." index="73" instance=ExtResource("2_j3ugf")]
 transform = Transform3D(-1.75664e-08, 0, -0.401872, 0, 0.401872, 0, 0.401872, 0, -1.75664e-08, 6.36931, 3.47652, -16.54)
 Artwork = "uid://dvm4hu4ldqdx1"
@@ -85,3 +93,48 @@ FrameColor = Color(0.0723144, 0.065643, 0.065643, 1)
 
 [node name="templeSpawnpoint" parent="." index="74" instance=ExtResource("10_c2m0y")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.223808, 0.5, -25.0428)
+
+[node name="greekArchitrave" parent="." index="78" instance=ExtResource("11_4bevt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.5422, 8.84012, 56.1612)
+
+[node name="greekArchitrave2" parent="." index="79" instance=ExtResource("11_4bevt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.65, 8.84012, 56.1612)
+
+[node name="greekTruss" parent="." index="80" instance=ExtResource("12_088kc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.7599, 79.9635)
+
+[node name="greekTruss2" parent="." index="81" instance=ExtResource("12_088kc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.7599, 31.9613)
+
+[node name="greekTruss3" parent="." index="82" instance=ExtResource("12_088kc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.7599, 40.0466)
+
+[node name="greekTruss4" parent="." index="83" instance=ExtResource("12_088kc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.7599, 47.9714)
+
+[node name="greekTruss5" parent="." index="84" instance=ExtResource("12_088kc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.7599, 55.9803)
+
+[node name="greekTruss6" parent="." index="85" instance=ExtResource("12_088kc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.7599, 64.0027)
+
+[node name="greekTruss7" parent="." index="86" instance=ExtResource("12_088kc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.7599, 72.0076)
+
+[node name="greekTruss8" parent="." index="87" instance=ExtResource("12_088kc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.7599, 35.9507)
+
+[node name="greekTruss9" parent="." index="88" instance=ExtResource("12_088kc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.7599, 44.036)
+
+[node name="greekTruss10" parent="." index="89" instance=ExtResource("12_088kc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.7599, 51.9607)
+
+[node name="greekTruss11" parent="." index="90" instance=ExtResource("12_088kc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.7599, 59.9697)
+
+[node name="greekTruss12" parent="." index="91" instance=ExtResource("12_088kc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.7599, 67.992)
+
+[node name="greekTruss13" parent="." index="92" instance=ExtResource("12_088kc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.7599, 75.997)

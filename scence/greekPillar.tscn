@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://ybbv4qavkjnw"]
+
+[ext_resource type="PackedScene" uid="uid://bg6f6mw5kxh2u" path="res://assets/3DModels/greekPillar.glb" id="1_mvr1h"]
+[ext_resource type="Material" uid="uid://b2rbixy7q5m7g" path="res://assets/textures/templePillar.tres" id="2_louop"]
+
+[node name="greekPillar" instance=ExtResource("1_mvr1h")]
+
+[node name="pillarInside" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.209, 0)
+surface_material_override/0 = ExtResource("2_louop")
+
+[node name="pillarInsideCol" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="CollisionShape3D" parent="pillarInsideCol" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.209, 0)

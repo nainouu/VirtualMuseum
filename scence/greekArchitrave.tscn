@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://l8cmkrbwhs6j"]
+
+[ext_resource type="PackedScene" uid="uid://dljbwdu3ivtl" path="res://assets/3DModels/greekArchitrave.glb" id="1_o5ded"]
+[ext_resource type="Material" uid="uid://crek4amp28ghp" path="res://assets/textures/templeFloor.tres" id="2_626s6"]
+
+[node name="greekArchitrave" instance=ExtResource("1_o5ded")]
+
+[node name="architraveLongTopSecond" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+surface_material_override/0 = ExtResource("2_626s6")
