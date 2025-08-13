@@ -132,33 +132,34 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("interact"):
 		if raycastHead.is_colliding():
 			var hit = raycastHead.get_collider()
-			var parent = hit.get_parent()
-			
-			# TODO: make this faster
-			var current = hit
-			var door = null
-			while current != null:
-				if current.has_method("toggle_door"):
-					door = current
-					break
-				current = current.get_parent()
+			if hit: #bugfix
+				var parent = hit.get_parent()
 				
-			if door:
-				door.toggle_door()
-				# TODO: play soundeffect for door
-				
-			# ::jetpack interact
-			if parent.get_name() == "jetpack":
-				equippedItem = parent
-				#parent.queue_free()
-				jetpackInfoLabel.visible = true
-				gunmodel.visible = false
-				
-			# ::gun interact
-			elif parent.get_name() == "gun":
-				equippedItem = parent
-				gunmodel.visible = true
-				jetpackInfoLabel.visible = false
+				# TODO: make this faster
+				var current = hit
+				var door = null
+				while current != null:
+					if current.has_method("toggle_door"):
+						door = current
+						break
+					current = current.get_parent()
+					
+				if door:
+					door.toggle_door()
+					# TODO: play soundeffect for door
+					
+				# ::jetpack interact
+				if parent.get_name() == "jetpack":
+					equippedItem = parent
+					#parent.queue_free()
+					jetpackInfoLabel.visible = true
+					gunmodel.visible = false
+					
+				# ::gun interact
+				elif parent.get_name() == "gun":
+					equippedItem = parent
+					gunmodel.visible = true
+					jetpackInfoLabel.visible = false
 				
 	# ::unequip all
 	if equippedItem and Input.is_key_pressed(KEY_R):
