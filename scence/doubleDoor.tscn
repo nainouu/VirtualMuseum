@@ -1,12 +1,23 @@
-[gd_scene load_steps=7 format=3 uid="uid://cmbm8q4vrhahu"]
+[gd_scene load_steps=11 format=3 uid="uid://cmbm8q4vrhahu"]
 
-[ext_resource type="Script" uid="uid://dv5hgjlu1ui0v" path="res://scripts/door.gd" id="1_gag2p"]
+[ext_resource type="Script" uid="uid://dv5hgjlu1ui0v" path="res://scripts/Door.gd" id="1_gag2p"]
+[ext_resource type="Texture2D" uid="uid://c5jjsfjnrkyo5" path="res://assets/textures/Wood008_1K-JPG/Wood008_1K-JPG_Color.jpg" id="2_o8u57"]
+[ext_resource type="Texture2D" uid="uid://q4540gry0obf" path="res://assets/textures/Wood008_1K-JPG/Wood008_1K-JPG_Displacement.jpg" id="3_31cxo"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kpua6"]
+albedo_texture = ExtResource("2_o8u57")
+clearcoat_enabled = true
+uv1_triplanar = true
 
 [sub_resource type="BoxMesh" id="BoxMesh_iaubx"]
 size = Vector3(1, 2, 0.05)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_iaubx"]
 size = Vector3(1, 2, 0.05)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pajm6"]
+albedo_texture = ExtResource("3_31cxo")
+uv1_triplanar = true
 
 [sub_resource type="Animation" id="Animation_gag2p"]
 length = 0.001
@@ -61,6 +72,7 @@ transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, -1, 0,
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="left/StaticBody3D"]
+material_override = SubResource("StandardMaterial3D_kpua6")
 mesh = SubResource("BoxMesh_iaubx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="left/StaticBody3D"]
@@ -70,9 +82,10 @@ shape = SubResource("BoxShape3D_iaubx")
 transform = Transform3D(-1, 0, 1.50996e-07, 0, 1, 0, -1.50996e-07, 0, -1, 1, 0, 0)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="right"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.484712, 0.00184798, 0.00408483)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="right/StaticBody3D"]
+material_override = SubResource("StandardMaterial3D_pajm6")
 mesh = SubResource("BoxMesh_iaubx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="right/StaticBody3D"]
