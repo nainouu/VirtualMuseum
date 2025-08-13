@@ -1,0 +1,49 @@
+[gd_scene load_steps=8 format=3 uid="uid://khyxxreppair"]
+
+[ext_resource type="PackedScene" uid="uid://lm184etfe8qp" path="res://assets/3DModels/Blaster.glb" id="1_6r63w"]
+[ext_resource type="Material" uid="uid://cv3kvhaonsltw" path="res://assets/textures/blasterPink.tres" id="2_37gah"]
+[ext_resource type="Material" uid="uid://dolc44n7vfw42" path="res://assets/textures/blasterVoid.tres" id="3_sc3ns"]
+[ext_resource type="Material" uid="uid://ft0pbscq3vdw" path="res://assets/textures/blasterCyan.tres" id="4_y7yky"]
+[ext_resource type="Material" uid="uid://biqgu3xeexomp" path="res://assets/textures/blasterGrey.tres" id="5_ul6si"]
+[ext_resource type="Material" uid="uid://cxkybmfugcwug" path="res://assets/textures/blasterJuice.tres" id="6_8g8v1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_thefu"]
+transparency = 1
+cull_mode = 1
+metallic = 0.7
+metallic_specular = 1.0
+roughness = 0.0
+
+[node name="Blaster" instance=ExtResource("1_6r63w")]
+
+[node name="handle" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_37gah")
+
+[node name="barrel" parent="handle" index="0"]
+surface_material_override/0 = ExtResource("2_37gah")
+surface_material_override/1 = ExtResource("3_sc3ns")
+
+[node name="Cube" parent="handle/barrel" index="0"]
+surface_material_override/0 = ExtResource("2_37gah")
+surface_material_override/1 = ExtResource("4_y7yky")
+
+[node name="Cylinder_001" parent="handle/barrel" index="1"]
+surface_material_override/0 = ExtResource("4_y7yky")
+
+[node name="cylinderEnd" parent="handle/barrel" index="2"]
+surface_material_override/0 = ExtResource("5_ul6si")
+
+[node name="BézierCurve" parent="handle/barrel/cylinderEnd" index="0"]
+surface_material_override/0 = ExtResource("5_ul6si")
+
+[node name="Cylinder_002" parent="handle/barrel/cylinderEnd" index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_thefu")
+
+[node name="Cylinder_004" parent="handle/barrel/cylinderEnd" index="2"]
+surface_material_override/0 = ExtResource("5_ul6si")
+
+[node name="Cylinder_005" parent="handle/barrel/cylinderEnd" index="3"]
+surface_material_override/0 = ExtResource("6_8g8v1")
+
+[node name="Cube_003" parent="handle" index="1"]
+surface_material_override/0 = ExtResource("5_ul6si")

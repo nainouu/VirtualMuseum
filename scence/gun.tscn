@@ -1,4 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://dyjcuqo1ytq1n"]
+[gd_scene load_steps=4 format=3 uid="uid://dyjcuqo1ytq1n"]
+
+[ext_resource type="PackedScene" uid="uid://khyxxreppair" path="res://scence/blaster.tscn" id="1_1gtcu"]
 
 [sub_resource type="TextMesh" id="TextMesh_jkdg5"]
 text = "gun"
@@ -20,3 +22,5 @@ text = "gun model here"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 shape = SubResource("BoxShape3D_1gtcu")
+
+[node name="Blaster" parent="." instance=ExtResource("1_1gtcu")]
