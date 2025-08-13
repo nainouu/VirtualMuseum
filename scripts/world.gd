@@ -70,3 +70,6 @@ func loadLevel(packedScene: PackedScene, spawnpoint: Node3D):
 		player.global_position = Vector3.ZERO
 	
 	worldLoaded = true
+	if player and player.gunmodel: 
+		player.equippedItem = null
+		player.gunmodel.visible = false

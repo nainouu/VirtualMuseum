@@ -197,7 +197,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.05937, 0.947067, 3.16528)
 transform = Transform3D(-2.31104e-08, 0, 0.528705, 0, 0.528705, 0, -0.528705, 0, -2.31104e-08, -5.75575, 1.03505, 3.28517)
 
 [node name="Caelum" parent="." instance=ExtResource("8_shjb2")]
-transform = Transform3D(-0.853951, 0, -0.520354, 0, 1, 0, 0.520354, 0, -0.853951, 42.515, 0.0730176, 68.2605)
+transform = Transform3D(-0.853951, 0, -0.520354, 0, 1, 0, 0.520354, 0, -0.853951, 42.515, 0.529123, 68.2605)
 
 [node name="templeDoor" parent="." instance=ExtResource("10_shjb2")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -1.08413, 1.03427, -14.1764)
@@ -221,3 +221,11 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -160.278, 19.8483, 83.0883)
 [node name="MazeSpawner" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.184, 0, 78.127)
 script = ExtResource("4_ma4xr")
+
+[node name="Maruoka_door" parent="." instance=ExtResource("6_j567o")]
+transform = Transform3D(-7.51506e-08, 0, -1.86354, 0, 2.60853, 0, 1.71925, 0, -8.1458e-08, -145.272, 34.2151, 93.8971)
+targetScenePath = "uid://cm43gro6ra13j"
+selected_spawnpoint = "spawnpoint_Maruoka_roof"
+
+[node name="spawnpoint_Maruoka_roof" parent="." instance=ExtResource("10_shjb2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -151.338, 72.1752, 83.1876)

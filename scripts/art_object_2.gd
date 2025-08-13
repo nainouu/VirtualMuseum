@@ -2,13 +2,7 @@
 
 @tool
 extends Node3D
-
-# shading not working
-
-
-
-
-
+class_name ArtObject2
 
 #@export_file("*.glb") var targetModel: String:
 	#set(value):
@@ -19,6 +13,7 @@ extends Node3D
 	set(value):
 		Artwork = value
 		_update_texture()
+		updateHitbox()
 
 @export var shaded: bool = false:
 	set(value):
@@ -67,9 +62,12 @@ extends Node3D
 @onready var Painting: Sprite3D = $Painting
 @onready var Model: Node3D = $Model
 @onready var Frame: Node3D = $Frame
+@onready var hitbox: Area3D = $hitbox
+@onready var hitboxShape: CollisionShape3D = $hitbox/shape
 
 func _ready() -> void:
 	_update_texture()
+	updateHitbox()
 	#_update_model()
 	if EnableFrame:
 		generate_frame()
@@ -92,7 +90,19 @@ func _update_texture() -> void:
 		
 		if Frame and EnableFrame:
 			generate_frame()
+
+func updateHitbox():
+	if Painting and Painting.texture:
+		var size = Painting.texture.get_size() * Painting.pixel_size
+		size.x *= Painting.scale.x
+		size.y *= Painting.scale.y
+		
+		var newShape = BoxShape3D.new()
+		newShape.size.x = size.x
+		newShape.size.y = size.y
+		newShape.size.z = 0.1
 	
+		hitboxShape.shape = newShape
 
 func clearFrame():
 	if !Frame:

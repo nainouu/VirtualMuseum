@@ -1,8 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://05qw73vkswb4"]
+[gd_scene load_steps=12 format=3 uid="uid://05qw73vkswb4"]
 
 [ext_resource type="Script" uid="uid://due0nf8emeib4" path="res://scripts/caelum_door.gd" id="1_k1fbu"]
-[ext_resource type="Texture2D" uid="uid://bpt110u8jg0m2" path="res://assets/textures/Wood008_1K-JPG/Wood008_1K-JPG_BW.jpg" id="2_r52cr"]
-[ext_resource type="Texture2D" uid="uid://c5jjsfjnrkyo5" path="res://assets/textures/Wood008_1K-JPG/Wood008_1K-JPG_Color.jpg" id="3_4cvys"]
+[ext_resource type="Texture2D" uid="uid://b7cht6qd2e421" path="res://assets/textures/Wood008_1K-JPG/Wood008_1K-JPG_BW.jpg" id="2_r52cr"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n3sqc"]
 albedo_texture = ExtResource("2_r52cr")
@@ -15,7 +14,7 @@ size = Vector3(1, 2, 0.05)
 size = Vector3(1, 2, 0.05)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wa2lo"]
-albedo_texture = ExtResource("3_4cvys")
+albedo_texture = ExtResource("2_r52cr")
 metallic = 0.48
 metallic_specular = 0.61
 uv1_triplanar = true

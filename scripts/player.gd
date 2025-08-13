@@ -15,6 +15,7 @@ extends CharacterBody3D
 @onready var gunmodel = $"../player/head/Camera3D/Gun/Blaster"
 @onready var cameraGUI = $"../player/CanvasLayer/Cameraframe" # prev: $"../stage/misc/Cameraframe"
 @onready var jetpackInfoLabel: Label = $"../player/CanvasLayer/jetpackInfo" # this is a placeholder for jetpack firstperson model
+@onready var paintingNameLabel: Label = $CanvasLayer/paintingName
 
 var currentSpeed = 5.0
 var lookRotation = Vector2()
@@ -117,6 +118,13 @@ func _input(event):
 				gun.shoot()
 				gunTimer = shootInterval
 
+func _process(delta: float) -> void:
+	if raycastHead.is_colliding():
+		var hit = raycastHead.get_collider()
+		if hit and hit.get_parent() and hit.get_parent().is_in_group("ArtObject2"):
+			paintingNameLabel.text = hit.get_parent().name
+	else:
+		paintingNameLabel.text = ""
 
 func _physics_process(delta: float) -> void:
 	
