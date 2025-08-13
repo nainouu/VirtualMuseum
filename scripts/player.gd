@@ -12,7 +12,7 @@ extends CharacterBody3D
 @onready var raycastHead: RayCast3D = $head/Camera3D/RayCastHead
 @onready var raycastFeet: RayCast3D = $RayCastFeet
 @onready var gun: Node3D = $head/Camera3D/Gun
-@onready var gunmodel = $"../player/head/Camera3D/Gun/gunModel"
+@onready var gunmodel = $"../player/head/Camera3D/Gun/Blaster"
 @onready var cameraGUI = $"../player/CanvasLayer/Cameraframe" # prev: $"../stage/misc/Cameraframe"
 @onready var jetpackInfoLabel: Label = $"../player/CanvasLayer/jetpackInfo" # this is a placeholder for jetpack firstperson model
 

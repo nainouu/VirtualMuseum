@@ -10,10 +10,10 @@
 [ext_resource type="PackedScene" uid="uid://ba0nxk8sfhju1" path="res://scence/jetpack.tscn" id="8_rdoft"]
 [ext_resource type="PackedScene" uid="uid://5e0fpuqewwdt" path="res://scence/caelum.tscn" id="8_shjb2"]
 [ext_resource type="PackedScene" uid="uid://t0xxkorfqse6" path="res://scence/spawnPoint.tscn" id="10_shjb2"]
-[ext_resource type="Texture2D" uid="uid://ds4jg2ju3664b" path="res://assets/textures/Grass002_1K-JPG/Grass002_1K-JPG_Color.jpg" id="10_spu2r"]
-[ext_resource type="Texture2D" uid="uid://bj2eawxn4w5e0" path="res://assets/textures/Grass002_1K-JPG/Grass002_1K-JPG_NormalDX.jpg" id="11_ws35w"]
-[ext_resource type="Texture2D" uid="uid://c7j4433k5ept0" path="res://assets/textures/Ground085_1K-JPG/Ground085_1K-JPG_Color.jpg" id="12_7n32q"]
-[ext_resource type="Texture2D" uid="uid://ydulpht2xgho" path="res://assets/textures/Ground085_1K-JPG/Ground085_1K-JPG_NormalDX.jpg" id="13_jovpq"]
+[ext_resource type="Texture2D" uid="uid://cda62lppv3n6x" path="res://assets/textures/Grass002_1K-JPG/Grass002_1K-JPG_Color.jpg" id="10_spu2r"]
+[ext_resource type="Texture2D" uid="uid://da3h5eat6ff6a" path="res://assets/textures/Grass002_1K-JPG/Grass002_1K-JPG_NormalDX.jpg" id="11_ws35w"]
+[ext_resource type="Texture2D" uid="uid://ifarklym2frf" path="res://assets/textures/Ground085_1K-JPG/Ground085_1K-JPG_Color.jpg" id="12_7n32q"]
+[ext_resource type="Texture2D" uid="uid://deobsy48fs72j" path="res://assets/textures/Ground085_1K-JPG/Ground085_1K-JPG_NormalDX.jpg" id="13_jovpq"]
 [ext_resource type="Texture2D" uid="uid://br3d3ghmmwhpv" path="res://assets/hdris/kloofendal_48d_partly_cloudy_puresky_2k.hdr" id="14_7n32q"]
 [ext_resource type="PackedScene" uid="uid://d0qo0r25a8whw" path="res://scence/Maruoka.tscn" id="15_jovpq"]
 
@@ -135,29 +135,43 @@ volumetric_fog_length = 277.33
 [node name="stage" type="Node3D"]
 physics_interpolation_mode = 1
 
-[node name="misc" type="Node3D" parent="."]
+[node name="tests" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -12.3155, 0)
 
-[node name="olTestBox" type="CSGBox3D" parent="misc"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.99971, 1.0891, -1.94855)
+[node name="olTestBox" type="CSGBox3D" parent="tests"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.1253, 1.0891, -1.94855)
 material_override = SubResource("ShaderMaterial_q0xho")
 operation = 2
 use_collision = true
 size = Vector3(4, 5.915, 2)
 
-[node name="floorbox" type="CSGBox3D" parent="."]
+[node name="floorbox" type="CSGBox3D" parent="tests"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.236525, -0.552933, -0.249606)
-visible = false
 use_collision = true
 size = Vector3(120, 1, 180)
 material = SubResource("StandardMaterial3D_aqk2v")
 metadata/surfaceType = "default"
 
-[node name="olTestBox2" type="CSGBox3D" parent="."]
+[node name="olTestBox2" type="CSGBox3D" parent="tests"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.21674, -0.187165, 11.087)
-visible = false
 material_override = SubResource("StandardMaterial3D_c8hlg")
 use_collision = true
 size = Vector3(32.8882, 0.390864, 3.70264)
+
+[node name="Grass" type="CSGBox3D" parent="tests"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.4303, -0.00773048, 0.000366211)
+use_collision = true
+size = Vector3(5, 0.1, 5)
+material = SubResource("StandardMaterial3D_u4yjv")
+metadata/surfaceType = "grass"
+
+[node name="Dirt" type="CSGBox3D" parent="tests"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.4201, 9.53674e-07, -4.99372)
+use_collision = true
+size = Vector3(5, 0.1, 5)
+material = SubResource("StandardMaterial3D_lhauw")
+script = ExtResource("4_ma4xr")
+metadata/surfaceType = "dirt"
 
 [node name="debugLabel" type="RichTextLabel" parent="."]
 modulate = Color(0.209046, 0.648167, 0.502491, 1)
@@ -167,21 +181,6 @@ offset_bottom = 28.0
 scale = Vector2(1, 0.914286)
 text = "  Virtual Musem indevmode"
 autowrap_mode = 0
-
-[node name="Grass" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.4303, -0.00773048, 0.000366211)
-use_collision = true
-size = Vector3(5, 0.1, 5)
-material = SubResource("StandardMaterial3D_u4yjv")
-metadata/surfaceType = "grass"
-
-[node name="Dirt" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.4201, 9.53674e-07, -4.99372)
-use_collision = true
-size = Vector3(5, 0.1, 5)
-material = SubResource("StandardMaterial3D_lhauw")
-script = ExtResource("4_ma4xr")
-metadata/surfaceType = "dirt"
 
 [node name="greekTemple" parent="." instance=ExtResource("5_spu2r")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -1.14396, -0.0578457, -42.6187)
@@ -195,7 +194,7 @@ selected_spawnpoint = "templeSpawnpoint"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.05937, 0.947067, 3.16528)
 
 [node name="gun" parent="." instance=ExtResource("8_7giy0")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5.75575, 1.03505, 3.28517)
+transform = Transform3D(-2.31104e-08, 0, 0.528705, 0, 0.528705, 0, -0.528705, 0, -2.31104e-08, -5.75575, 1.03505, 3.28517)
 
 [node name="Caelum" parent="." instance=ExtResource("8_shjb2")]
 transform = Transform3D(-0.853951, 0, -0.520354, 0, 1, 0, 0.520354, 0, -0.853951, 42.515, 0.0730176, 68.2605)

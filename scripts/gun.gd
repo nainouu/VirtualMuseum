@@ -3,7 +3,7 @@ extends Node3D
 const maxDecals : int = 100
 var decalCount : int = 0
 @onready var impactRay: RayCast3D = $impactRay
-@onready var gunModel = $gunModel
+@onready var gunModel = $Blaster
 @onready var b_decal = preload("res://scence/splat.tscn")
 var LineDrawer = preload("res://scripts/drawLine3D.gd").new() #In 'global' scope
 var gunshot = preload("res://sounds/gunshot.ogg")
@@ -12,7 +12,7 @@ var gunshot = preload("res://sounds/gunshot.ogg")
 func _ready() -> void:
 	$gunPlayer.stream = gunshot
 	add_child(LineDrawer) #At some point before calling the desired draw function(s) e.g. in '_ready()'
-
+	assert(gunModel)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

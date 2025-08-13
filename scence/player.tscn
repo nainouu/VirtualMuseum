@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://dr41gukn02fs5" path="res://scence/camera_3d.gd" id="2_4snmf"]
 [ext_resource type="Script" uid="uid://diwkb6rx865jq" path="res://scripts/gun.gd" id="3_e4r8n"]
 [ext_resource type="Texture2D" uid="uid://cvi5t5xhed733" path="res://assets/textures/cameraframe.svg" id="4_vh3rr"]
+[ext_resource type="PackedScene" uid="uid://khyxxreppair" path="res://scence/blaster.tscn" id="5_4snmf"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_imags"]
 font_size = 46
@@ -11,9 +12,6 @@ outline_size = 3
 outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_j6sff"]
-
-[sub_resource type="TextMesh" id="TextMesh_u4yjv"]
-text = "gun"
 
 [node name="player" type="CharacterBody3D"]
 script = ExtResource("1_qav0y")
@@ -62,14 +60,15 @@ collide_with_areas = true
 [node name="Gun" type="Node3D" parent="head/Camera3D"]
 script = ExtResource("3_e4r8n")
 
-[node name="gunModel" type="MeshInstance3D" parent="head/Camera3D/Gun"]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.357881, -0.132686, -0.525552)
-mesh = SubResource("TextMesh_u4yjv")
-
 [node name="impactRay" type="RayCast3D" parent="head/Camera3D/Gun"]
 target_position = Vector3(0, 0, -50)
 
 [node name="gunPlayer" type="AudioStreamPlayer3D" parent="head/Camera3D/Gun"]
+
+[node name="Blaster" parent="head/Camera3D/Gun" instance=ExtResource("5_4snmf")]
+physics_interpolation_mode = 2
+transform = Transform3D(-0.180347, 0, 1.57664e-08, 0, 0.180347, 0, -1.57664e-08, 0, -0.180347, 0.335447, -0.303288, -0.483318)
+visible = false
 
 [node name="FootstepPlayer" type="AudioStreamPlayer3D" parent="."]
 
